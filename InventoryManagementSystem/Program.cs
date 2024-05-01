@@ -15,6 +15,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IProductService, ProductService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +36,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
+app.UseCors("AllowAllOrigins");
 app.MapControllers();
 
 app.Run();

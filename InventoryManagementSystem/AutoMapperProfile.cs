@@ -10,7 +10,8 @@ namespace InventoryManagementSystem
         {
             CreateMap<Product, ProductDto>();
             CreateMap<ProductDto, Product>();
-            
+            CreateMap<Sale, SaleDto>();
+            CreateMap<SaleDto, Sale>();
         }
     }
 }

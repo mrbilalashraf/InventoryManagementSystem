@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using InventoryManagementSystem.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryManagementSystem.Models
+namespace InventoryManagementSystem.Dtos
 {
-    public class Sale
+    public class SaleDto
     {
         public int Id { get; set; }
 
